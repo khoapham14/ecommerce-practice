@@ -1,16 +1,28 @@
-.btn-primary{
-    background-color: #FF3F00;
-    color: white;
-    border: none;
+.product-card{
+  margin-right: 2%;
+  margin-bottom: 2%;
 }
 
-.btn-primary:hover{
-    background-color: #ff9100;
-    color:white;
-    border: none;
+
+.btn-primary {
+  background-color: #ff3f00;
+  color: white;
+  border: none;
+  width: 100%;
 }
 
-#product-button{
-    color:white;
-    text-decoration: none;
+.btn-primary:hover {
+  background-color: #ff9100;
+  color: white;
+  border: none;
 }
+
+.product-name{
+    font-weight: bold;
+}
+
+#product-button {
+  color: white;
+  text-decoration: none;
+}
+

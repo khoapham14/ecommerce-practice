@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import ProductCard from "./ProductCard";
+import PageHeader from "./PageHeader";
 
 import { getProducts as listProducts } from '../actions/productActions';
 
@@ -17,8 +18,14 @@ const HomePage = () => {
         dispatch(listProducts())
     }, [dispatch])
 
+    var mainHeader = "hi.";
+    var subHeader = "We sell nothing here.";
+
     return (
+        
+
         <div className="homePage">
+            <PageHeader mainHeader={mainHeader} subHeader={subHeader} />
             {loading ? (
                 <h2>Loading...</h2>
             ) : error ? (

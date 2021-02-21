@@ -15,7 +15,7 @@ const ProductCard = ({ imageUrl, name, price, description, productId }) => {
                     <Card.Text>
                         <p className="productDesc"> {description}</p>
                     </Card.Text>
-                    <Button variant="primary"><Link to={`/product/${productId}`}> View Product</Link></Button>
+                    <Button variant="primary"><Link to={`/product/${productId}`} id="product-button"> View Product</Link></Button>
                 </Card.Body>
             </Card>
         </div>

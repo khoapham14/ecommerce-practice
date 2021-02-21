@@ -1,0 +1,16 @@
+.btn-primary{
+    background-color: #FF3F00;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color: #ff9100;
+    color:white;
+    border: none;
+}
+
+#product-button{
+    color:white;
+    text-decoration: none;
+}

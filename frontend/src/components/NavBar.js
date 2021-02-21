@@ -1,5 +1,5 @@
 import "./NavBar.css";
-import { Navbar, Form, FormControl, Nav, Button } from 'react-bootstrap';
+import { Container, Navbar, Form, FormControl, Nav, Button } from 'react-bootstrap';
 
 import Cart_Image from "../assets/cart-59-256.png";
 import Search_Icon from "../assets/search-13-256.png";
@@ -8,7 +8,8 @@ import PageHeader from "../components/PageHeader";
 
 const NavBar = () => {
     return (
-        <div className="navbar-container">
+        <div>
+            <Container className="navbar-container">
             <Navbar className="navbar" expand="lg">
                 <Navbar.Brand href="#home">nothing</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,6 +35,7 @@ const NavBar = () => {
                     </Nav.Link>
                 </Navbar.Collapse>
             </Navbar>
+            </Container>
         </div>
     )
 }

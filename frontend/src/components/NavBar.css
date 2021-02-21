@@ -1,0 +1,24 @@
+.navbar{
+    background: transparent;
+    justify-content: center;
+}
+
+.navbar-light .navbar-brand{
+    padding-right: 3%;
+    font-weight: bold;
+    font-size: 2em;
+    color: #FF3F00;
+}
+
+.nav-link{
+    padding-right: 3%;
+    font-size: 1em;
+    color: #8f8f8f;
+}
+
+.search-bar{
+    width: 45vw;
+    padding-right: 3%;
+    font-size: 1em;
+    color: #8f8f8f;
+}

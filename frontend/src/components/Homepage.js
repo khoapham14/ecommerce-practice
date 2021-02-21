@@ -1,4 +1,4 @@
-import "./Homepage.css";
+import "./HomePage.css";
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard";
 
 import { getProducts as listProducts } from '../actions/productActions';
 
-const Homepage = () => {
+const HomePage = () => {
 
     const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const Homepage = () => {
     }, [dispatch])
 
     return (
-        <div className="homepage">
+        <div className="homePage">
             {loading ? (
                 <h2>Loading...</h2>
             ) : error ? (
@@ -39,4 +39,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage;
+export default HomePage;

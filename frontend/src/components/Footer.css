@@ -1,0 +1,50 @@
+.footer {
+  background-color: #666a86;
+  height: 40vh;
+  min-height: 400px;
+  padding-top: 5%;
+}
+
+.footer-column {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-header {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.footer-item {
+  color: white;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1em;
+}
+
+#footer-media {
+  margin-right: 1em;
+  margin-top: 1em;
+  border-radius: 0.5em;
+}
+
+.email-form {
+  border: 1px solid white;
+}
+
+.btn-outline-light {
+  background-color: white;
+  border-left: 1px solid #8f8f8f;
+}
+
+.btn-outline-light:hover {
+  border-left: 1px solid #8f8f8f;
+  background-color: #ff3f00;
+  border-color: #ff3f00;
+}
+
+.col-sm-6{
+    padding-bottom: 3%;
+}

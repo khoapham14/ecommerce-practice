@@ -6,7 +6,26 @@
 }
 
 .row{
-    width: 100%;
     padding: 0;
     margin: 0;
+}
+
+.products-container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+.partners-container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+#partner-logo{
+    margin-bottom: 15%;
 }

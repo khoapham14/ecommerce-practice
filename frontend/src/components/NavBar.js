@@ -9,11 +9,12 @@ const NavBar = () => {
     <div>
       <Container className="navbar-container">
         <Navbar className="navbar" expand="lg">
-          <Navbar.Brand href="#home">nothing</Navbar.Brand>
+          <Navbar.Brand href="/">nothing</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav.Link href="#home">about</Nav.Link>
-            <Nav.Link href="#link">contact</Nav.Link>
+            <Nav.Link href="/about">about</Nav.Link>
+            <Nav.Link href="/contact">contact</Nav.Link>
             <InputGroup className="search-form">
               <FormControl type="text" className="search-bar" placeholder="Search for products" />
               <InputGroup.Append>

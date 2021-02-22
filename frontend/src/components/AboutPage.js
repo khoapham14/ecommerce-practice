@@ -1,9 +1,12 @@
 import PageHeader from "./PageHeader";
+import "./StaticPages.css";
 
 
 const AboutPage = () => {
   return (
-    <PageHeader mainHeader="This project is not real." subHeader="So there's nothing about us." />
+    <div id="static-page">
+      <PageHeader mainHeader="This project is not real." subHeader="So there's nothing about us." />
+    </div>
   )
 }
 

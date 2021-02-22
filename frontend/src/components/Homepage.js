@@ -73,7 +73,7 @@ const HomePage = () => {
           ) : error ? (
             <h2>{error}</h2>
           ) : (
-                products.slice(4, 7).map((product) => (
+                products.slice(4, 8).map((product) => (
                   <ProductCard
                     key={product._id}
                     name={product.name}

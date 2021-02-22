@@ -62,6 +62,15 @@ const products = [
         price: 8.50,
         countInStock: 10,
     },
+    {
+        name: "Nothing x Supreme",
+        imageUrl:
+            "https://i.ebayimg.com/images/g/r1YAAOSws-xe9M1v/s-l300.jpg",
+        description:
+            "Limited Edition. Created in collaboration with Supreme.",
+        price: 999,
+        countInStock: 10,
+    },
 ];
 
 module.exports = products;

@@ -1,14 +1,23 @@
 html, body {
-  margin-left: auto;
   margin: 0px;
   padding: 0px;
-  y:0;
-  display: flexbox;
   font-family: "Jost", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+@media only screen and (max-width: 650px){
+  body{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  body{
+    font-size: 12px;
+  }
+}
 
 
 code {

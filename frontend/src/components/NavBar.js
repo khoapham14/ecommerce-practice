@@ -19,16 +19,13 @@ const NavBar = () => {
               <FormControl type="text" className="search-bar" placeholder="Search for products" />
               <InputGroup.Append>
                 <Button variant="outline-secondary" className="search-button">
-                  <img src={Search_Icon}
-                    height="20px"
-                    width="20px"
-                  />
+                  <img src={Search_Icon} id="search-icon"/>
                 </Button>
               </InputGroup.Append>
             </InputGroup>
-            <Nav.Link href="">register</Nav.Link>
-            <Nav.Link href="">login</Nav.Link>
-            <Nav.Link href="">
+            <Nav.Link href="/register">register</Nav.Link>
+            <Nav.Link href="/login">login</Nav.Link>
+            <Nav.Link href="/cart">
               <img src={Cart_Image}
                 height="35px"
                 width="35px"

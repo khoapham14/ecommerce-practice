@@ -30,6 +30,10 @@
   border-radius: 0.5em;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
 .email-form {
   border: 1px solid white;
 }
@@ -41,10 +45,16 @@
 
 .btn-outline-light:hover {
   border-left: 1px solid #8f8f8f;
-  background-color: #ff3f00;
-  border-color: #ff3f00;
+  background-color: #FF7F11;
+  border-color: #FF7F11;
 }
 
 .col-sm-6{
     padding-bottom: 3%;
+}
+
+@media only screen and (max-width: 650px){
+  .footer{
+    min-height: 650px;
+  }
 }

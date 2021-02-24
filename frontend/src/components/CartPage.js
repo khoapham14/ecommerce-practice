@@ -2,6 +2,8 @@ import "./CartPage.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { loadStripe } from '@stripe/stripe-js';
+import axios from "axios";
 
 // Components
 import CartItem from "./CartItem.js";
@@ -15,7 +17,7 @@ const CartPage = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -35,6 +37,40 @@ const CartPage = () => {
       .toFixed(2);
   };
 
+  
+  const stripePromise = loadStripe("pk_test_51IMtE6CzCpfxrku1HAVAuRThr8dyQmFbXLrdl3wLZAu5RLkKrU1xa4ZX54oflb548Jsrg2lA14eQpFkfGd91FV0B00459THt5z");
+
+  const getStripe = async () =>{
+    
+    console.log("Getstripe called");
+     // Get Stripe.js instance
+     const stripe = await stripePromise;
+
+     // Call your backend to create the Checkout Session
+     const response = await fetch('/create-checkout-session', { method: 'POST'});
+ 
+ 
+     const session = await response.json();
+ 
+     // When the customer clicks on the button, redirect them to Checkout.
+     const result = await stripe.redirectToCheckout({
+       sessionId: session.id,
+     });
+ 
+     if (result.error) {
+       alert(result.error.message);
+     }
+  }
+
+  const handleClick = async (event) => {
+    //Send cart data to backend
+    await axios.post('/import', {
+      method: 'POST',
+      total: getCartSubTotal(),
+      cart: cartItems,
+    }).then(getStripe())
+  };
+
   return (
     <>
       <div className="CartPage">
@@ -46,15 +82,15 @@ const CartPage = () => {
               Your Cart Is Empty <Link to="/">Go Back</Link>
             </div>
           ) : (
-            cartItems.map((item) => (
-              <CartItem
-                key={item.product}
-                item={item}
-                qtyChangeHandler={qtyChangeHandler}
-                removeHandler={removeFromCartHandler}
-              />
-            ))
-          )}
+              cartItems.map((item) => (
+                <CartItem
+                  key={item.product}
+                  item={item}
+                  qtyChangeHandler={qtyChangeHandler}
+                  removeHandler={removeFromCartHandler}
+                />
+              ))
+            )}
         </div>
 
         <div className="CartPage__right">
@@ -63,7 +99,7 @@ const CartPage = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button>Proceed To Checkout</button>
+            <button onClick={handleClick}>Proceed To Checkout</button>
           </div>
         </div>
       </div>

@@ -4,9 +4,9 @@
   padding-right: 0;
 }
 
-.container{
-  padding-left: 0;
-  padding-right: 0;
+.navbar-container {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .navbar .navbar-toggler-icon {
@@ -69,9 +69,34 @@
   background-color: #000000;
 }
 
+#search-icon {
+  height: 1.25em;
+  width: 1.25em;
+}
+
 @media only screen and (max-width: 800px) and (min-width: 700px) {
   .navbar-container {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  #search-icon {
+    height: 1em;
+    width: 1em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .navbar-container {
+    
+  }
+
+  #search-icon {
+    height: 12px;
+    width: 12px;
+  }
+
+  .search-button {
+  
   }
 }

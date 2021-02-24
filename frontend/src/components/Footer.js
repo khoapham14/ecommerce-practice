@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { Container, Navbar, Form, FormControl, Nav, Button, InputGroup, Row, Col } from 'react-bootstrap';
+import { Container, FormControl, Button, InputGroup, Row, Col } from 'react-bootstrap';
 
 import FB_Icon from "../assets/facebook_white.png";
 import Twitter_Icon from "../assets/twitter_white.png";
@@ -12,24 +12,24 @@ const Footer = () => {
     <div className="footer">
       <Container>
         <Row>
-          <Col md="3" sm="6">
+          <Col md="3" sm="6" xs="12">
             <p className="footer-header">Get to know nothing</p>
-            <p className="footer-item">About us</p>
-            <p className="footer-item">Contact us</p>
-            <p className="footer-item">Who created nothing?</p>
+            <a href="/about"><p className="footer-item">About us</p></a>
+            <a href="/contact"><p className="footer-item">Contact us</p></a>
+            <a href="/nothing-creator"><p className="footer-item">Who created nothing?</p></a>
           </Col>
-          <Col md="3" sm="6">
+          <Col md="3" sm="6" xs="12">
             <p className="footer-header">Careers</p>
-            <p className="footer-item">Job vacancies</p>
-            <p className="footer-item">Why work for nothing?</p>
+            <a href="/careers"><p className="footer-item">Job vacancies</p></a>
+            <a href="/work-4-nothing"><p className="footer-item">Why work for nothing?</p></a>
           </Col>
-          <Col md="3" sm="6">
+          <Col md="3" sm="6" xs="12">
             <p className="footer-header">Useless links</p>
             <p className="footer-item">Terms of Service</p>
             <p className="footer-item">Privacy Policy</p>
             <p className="footer-item">Refund Policy</p>
           </Col>
-          <Col md="3" sm="6">
+          <Col md="3" sm="6" xs="12">
             <p className="footer-header">Connect with us</p>
             <p className="footer-item"> Subscribe to our newsletter </p>
             <InputGroup>

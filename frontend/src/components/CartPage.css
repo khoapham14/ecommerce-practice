@@ -1,7 +1,8 @@
 .CartPage {
     display: flex;
     max-width: 1300px;
-    margin: 2rem auto;
+    margin-top: 10vh;
+    height: 80vh;
   }
   
   .CartPage h2 {

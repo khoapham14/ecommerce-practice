@@ -1,6 +1,5 @@
 .page-header{
     padding-top: 35vh;
-    padding-left: 15%;
     margin-bottom: 5%;
 }
 
@@ -14,4 +13,13 @@
 #sub-header{
     color: black;
     font-size: 2em;
+}
+
+
+@media only screen and (max-width: 650px){
+
+}
+
+@media only screen and (max-width: 450px){
+
 }

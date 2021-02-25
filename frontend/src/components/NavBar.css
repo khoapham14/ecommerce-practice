@@ -1,7 +1,5 @@
 .navbar {
   background: transparent;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .navbar-container {
@@ -31,13 +29,14 @@
 .nav-link {
   margin-right: 3%;
   font-size: 1em;
+  font-weight: 300;
   color: #8f8f8f;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     linear-gradient(#8f8f8f, #8f8f8f);
   background-size: 100% 2px, 0 2px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.5s linear;
+  transition: background-size 0.2s linear;
   margin-left: 1em;
 }
 
@@ -74,29 +73,70 @@
   width: 1.25em;
 }
 
-@media only screen and (max-width: 800px) and (min-width: 700px) {
-  .navbar-container {
-    padding-left: 0;
-    padding-right: 0;
+#cart-icon {
+  height: 2em;
+  width: 2em;
+}
+
+.cartlogo-badge {
+  width: 2em;
+  height: 2em;
+  background-color: #FF3F00;
+  border-radius: 50%;
+  color: white;
+  display:flex;
+  margin-left: -7px;
+  margin-top: -7px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+}
+
+@media only screen and (max-width: 991){
+  .navbar-container{
+    margin: 0;
+    padding: 0;
   }
+}
+
+@media only screen and (max-width: 767px){
+  .navbar{
+  }
+
+  .cartlogo-badge {
+    width: 2em;
+    height: 2em;
+    background-color: #FF3F00;
+    border-radius: 50%;
+    color: white;
+    display:flex;
+    margin-left: 2em;
+    margin-top: -3em;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (max-width: 576px) {
 
   #search-icon {
     height: 1em;
     width: 1em;
   }
-}
 
-@media only screen and (max-width: 450px) {
-  .navbar-container {
-    
+  .cartlogo-badge {
+    width: 2em;
+    height: 2em;
+    background-color: #FF3F00;
+    border-radius: 50%;
+    color: white;
+    display:flex;
+    margin-left: 2em;
+    margin-top: -3em;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
   }
 
-  #search-icon {
-    height: 12px;
-    width: 12px;
-  }
-
-  .search-button {
-  
-  }
 }

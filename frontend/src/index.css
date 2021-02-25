@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
   font-family: "Jost", sans-serif;
@@ -6,21 +7,19 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn{
+  font-size: 1em;
+}
 
-@media only screen and (max-width: 650px){
-  body{
+@media only screen and (max-width: 767px) {
+  body {
     font-size: 14px;
   }
 }
 
-@media only screen and (max-width: 450px){
-  body{
+@media only screen and (max-width: 575px) {
+  body {
     font-size: 12px;
   }
 }
 
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}

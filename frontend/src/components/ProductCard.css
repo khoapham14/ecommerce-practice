@@ -1,6 +1,9 @@
 .product-card{
   margin-right: 2%;
   margin-bottom: 2%;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

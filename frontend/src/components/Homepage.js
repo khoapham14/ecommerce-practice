@@ -6,6 +6,8 @@ import { Row, Container, Col } from 'react-bootstrap';
 import ProductCard from "./ProductCard";
 import PageHeader from "./PageHeader";
 
+import Arrow from "../assets/arrow-211-256.png";
+
 import FB_Logo from "../assets/facebook-3-256.png";
 import Amazon_Logo from "../assets/amazon-256.png";
 import Netflix_Logo from "../assets/netflix-2-256.png";
@@ -43,6 +45,7 @@ const HomePage = () => {
   return (
     <div className="homePage">
       <PageHeader mainHeader={mainHeader} subHeader={subHeader} />
+      <img src={Arrow} id="arrow-down"/>
       <PageHeader mainHeader={productHeader} subHeader={productSubHeader} />
       <Container className="products-container">
         <Row id="product-list">

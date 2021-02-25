@@ -9,11 +9,9 @@ const ProductCard = ({ imageUrl, name, price, description, productId }) => {
       <Card style={{ width: '16rem' }} className="product-card">
         <Card.Img variant="top" src={imageUrl} />
         <Card.Body>
-          <Card.Title><p className="product-name"> {name}</p></Card.Title>
-          <Card.Subtitle className="mb-2 text-muted"><p className="product-price"> ${roundedPrice}</p></Card.Subtitle>
-          <Card.Text>
-            <p className="product-desc"> {description}</p>
-          </Card.Text>
+          <Card.Title className="product-name"> {name}</Card.Title>
+          <Card.Subtitle className="mb-2 text-mute product-price"> ${roundedPrice}</Card.Subtitle>
+          <Card.Text className="product-desc"> {description} </Card.Text>
           <Button variant="primary"><Link to={`/product/${productId}`} id="product-button"> View Product</Link></Button>
         </Card.Body>
       </Card>

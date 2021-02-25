@@ -36,13 +36,14 @@ app.post('/import', async (req, res) => {
   console.log(items);
 });
 
+// Call Stripe API to create checkout session.
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: items,
     mode: 'payment',
     success_url: 'https://example.com/success',
-    cancel_url: 'https://example.com/cancel',
+    cancel_url: 'http://localhost:3000/cart',
   });
 
   res.json({ id: session.id });

@@ -6,7 +6,7 @@ import Cart_Image from "../assets/cart-59-256.png";
 import Search_Icon from "../assets/search-13-256.png";
 
 const NavBar = (props) => {
-  const { user, handleLogout } = props;
+  const { user, handleLogout, email } = props;
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 

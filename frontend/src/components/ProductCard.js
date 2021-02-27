@@ -12,7 +12,7 @@ const ProductCard = ({ imageUrl, name, price, description, productId }) => {
           <Card.Title className="product-name"> {name}</Card.Title>
           <Card.Subtitle className="mb-2 text-mute product-price"> ${roundedPrice}</Card.Subtitle>
           <Card.Text className="product-desc"> {description} </Card.Text>
-          <Button variant="primary"><Link to={`/product/${productId}`} id="product-button"> View Product</Link></Button>
+          <Button id="product-button"><Link to={`/product/${productId}`} id="button-text"> View Product</Link></Button>
         </Card.Body>
       </Card>
   )

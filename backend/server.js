@@ -19,6 +19,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 
 var items = [];
 
+
 // Gets data from cart and create custom line_items.
 app.post('/import', async (req, res) => {
   items = await req.body.cart.map((product) => {
@@ -31,24 +32,25 @@ app.post('/import', async (req, res) => {
         unit_amount: parseInt(product.price * 100),
       },
       quantity: product.qty,
+      tax_rates: ['txr_1IPbg5CzCpfxrku1OejJ1QiE'],
     }
   });
-  console.log(items);
 });
+
+
 
 // Call Stripe API to create checkout session.
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: items,
-    mode: 'payment',
+    mode: 'payment',  
     success_url: 'https://example.com/success',
     cancel_url: 'http://localhost:3000/cart',
   });
 
   res.json({ id: session.id });
 });
-
 
 
 app.listen(4242, () => console.log(`Listening on port ${4242}!`));

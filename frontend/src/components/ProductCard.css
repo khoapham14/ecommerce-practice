@@ -6,17 +6,10 @@
   margin-right: auto;
 }
 
-
-.btn-primary {
-  background-color: #ff3f00;
-  color: white;
-  border: none;
-  width: 100%;
-}
-
-.btn-primary:hover {
+#product-button:hover {
   background-color: #FF7F11;
   color: white;
+  text-decoration:none;
   border: none;
 }
 
@@ -24,8 +17,15 @@
     font-weight: bold;
 }
 
+#button-text{
+  color:white;
+}
+
 #product-button {
   color: white;
   text-decoration: none;
+  background-color: #ff3f00;
+  border: none;
+  width: 100%;
 }
 

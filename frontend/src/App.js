@@ -99,7 +99,7 @@ const App = () => {
   return (
     <div className="app">
       <Router>
-        <NavBar user={user} handleLogout={handleLogout} />
+        <NavBar user={user} handleLogout={handleLogout} email={email}/>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/product/:id" component={ProductPage} />

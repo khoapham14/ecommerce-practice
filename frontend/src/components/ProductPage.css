@@ -1,15 +1,35 @@
-.ProductPage {
+.product-page {
   display: block;
-  height: 75vh;
   margin-top: 10vh;
 }
 
 .card_header{
   color: #FF3F00;
   font-weight: bold;
-
 }
 
+.product-name{
+  font-weight: bold;
+}
+
+.product-page-info{
+  background-color: white;
+  padding: 2% 2% 2% 2%;
+}
+
+#add-button{
+  background-color: #FF3F00;
+  border: 1px solid #FF3F00;
+}
+
+#add-button:hover{
+  background-color: #FF7F11;
+  border: 1px solid #FF7F11;
+}
+
+#page-info{
+  font-weight: bold;
+}
 
 @media only screen and (max-width: 960px) {
 

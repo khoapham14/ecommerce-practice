@@ -16,13 +16,14 @@
 
 label{
     font-weight: bold;
+    font-size: 1em;
 }
 
 #form-title{
     color: #FF3F00;
     font-size: 2em;
     font-weight: bold;
-    padding-bottom: 2em;
+    margin-bottom: 1em;
     text-align: center;
 }
 
@@ -44,8 +45,9 @@ label{
 #form-textfield{
     width: 100%;
     margin-bottom: 3%;
-    border-color: #8F8F8F;
-    font-size: 1em;
+    border: 1px solid #8f8f8f;
+    font-size: 0.8em;
+    padding: 2% 2% 2% 2%;
 }
 
 

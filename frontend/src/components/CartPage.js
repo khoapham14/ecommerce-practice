@@ -1,6 +1,7 @@
 import "./CartPage.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { loadStripe } from '@stripe/stripe-js';
 import axios from "axios";
@@ -34,76 +35,99 @@ const CartPage = () => {
   const getCartSubTotal = () => {
     return cartItems
       .reduce((price, item) => price + item.price * item.qty, 0)
-      .toFixed(2);
+      .toFixed(3);
   };
 
-  
-  const stripePromise = loadStripe("pk_test_51IMtE6CzCpfxrku1HAVAuRThr8dyQmFbXLrdl3wLZAu5RLkKrU1xa4ZX54oflb548Jsrg2lA14eQpFkfGd91FV0B00459THt5z");
+  const getCostWithGST = () => {
+    return (getCartSubTotal() * 0.15).toFixed(3);
+  }
 
-  const getStripe = async () =>{
-    
+  const getTotal = () => {
+    return (parseFloat(getCartSubTotal()) + parseFloat(getCostWithGST())).toFixed(3);
+  }
+
+
+  const stripePromise = loadStripe("pk_live_51IMtE6CzCpfxrku1F1xeeVeZw2ggFJsMq48HU7IZ9b6soFdmeE9SrDQQLM0dw0MeGK9z1BHdXK3TdKrJNOAXlsZR00iz83KSEh");
+
+  const getStripe = async () => {
+
     console.log("Getstripe called");
-     // Get Stripe.js instance
-     const stripe = await stripePromise;
+    // Get Stripe.js instance
+    const stripe = await stripePromise;
 
-     // Call your backend to create the Checkout Session
-     const response = await fetch('/create-checkout-session', { method: 'POST'});
- 
- 
-     const session = await response.json();
- 
-     // When the customer clicks on the button, redirect them to Checkout.
-     const result = await stripe.redirectToCheckout({
-       sessionId: session.id,
-     });
- 
-     if (result.error) {
-       alert(result.error.message);
-     }
+    // Call your backend to create the Checkout Session
+    const response = await fetch('/create-checkout-session', { method: 'POST' });
+
+
+    const session = await response.json();
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+    }
   }
 
   const handleClick = async (event) => {
     //Send cart data to backend
     await axios.post('/import', {
       method: 'POST',
-      total: getCartSubTotal(),
+      total: getTotal(),
       cart: cartItems,
     }).then(getStripe())
   };
 
   return (
-    <>
-      <div className="CartPage">
-        <div className="CartPage__left">
-          <h2>Shopping Cart</h2>
+    <Container className="cart-page">
 
-          {cartItems.length === 0 ? (
-            <div>
-              Your Cart Is Empty <Link to="/">Go Back</Link>
+      <Row>
+        <Col md="8" sm="12" xs="12">
+          <div className="cart-items">
+            <p className="cart-item-header">Shopping Cart</p>
+
+            {cartItems.length === 0 ? (
+              <div>
+                Your Cart Is Empty <Link to="/">Go Back</Link>
+              </div>
+            ) : (
+                cartItems.map((item) => (
+                  <CartItem
+                    key={item.product}
+                    item={item}
+                    qtyChangeHandler={qtyChangeHandler}
+                    removeHandler={removeFromCartHandler}
+                  />
+                ))
+              )}
+          </div>
+        </Col>
+        <Col md="4" sm="12" xs="12">
+          <div className="cart-info">
+            <p className="cart-info-header">Total Cost</p>
+            <div className="cart-info-details">
+              <Row>
+                <Col md="6" sm="6" xs="12">
+                  <p>Subtotal ({getCartCount()}) items: </p>
+                  <p>GST (15%):</p>
+                  <p>You pay: </p>
+                </Col>
+                <Col md="6" sm="6" xs="12">
+                  <p>${getCartSubTotal()}</p>
+                  <p>${getCostWithGST()}</p>
+                  <p id="cart-cost">${getTotal()}</p>
+                </Col>
+              </Row>
             </div>
-          ) : (
-              cartItems.map((item) => (
-                <CartItem
-                  key={item.product}
-                  item={item}
-                  qtyChangeHandler={qtyChangeHandler}
-                  removeHandler={removeFromCartHandler}
-                />
-              ))
-            )}
-        </div>
-
-        <div className="CartPage__right">
-          <div className="CartPage__info">
-            <p>Subtotal ({getCartCount()}) items</p>
-            <p>${getCartSubTotal()}</p>
+            <div>
+              <Button id="checkout-button" onClick={handleClick}>Proceed To Checkout</Button>
+            </div>
           </div>
-          <div>
-            <button onClick={handleClick}>Proceed To Checkout</button>
-          </div>
-        </div>
-      </div>
-    </>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

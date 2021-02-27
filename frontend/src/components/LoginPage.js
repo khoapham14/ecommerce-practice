@@ -18,6 +18,7 @@ const LoginPage = (props) => {
         <p>
           <input
             id="form-textfield"
+            placeholder="john.doe@gmail.com"
             type="text"
             autoFocus
             required
@@ -31,6 +32,7 @@ const LoginPage = (props) => {
         <p>
           <input
             id="form-textfield"
+            placeholder="6 or more characters"
             type="password"
             autoFocus
             required
